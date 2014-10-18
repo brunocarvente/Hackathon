@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Empty gadget</title>
+<script src="bower_components/versal-component-runtime/dist/runtime.min.js"></script>
+<link rel="import" href="bower_components/versal-gadget-api/versal-gadget-api.html">
+ <link rel="stylesheet" href="versal.css">
+</head>
+
+<body>
+  
+<div id="imgs">
+	<div id="div1" ondrop="drop(event)"  ondragover="allowDrop(event)" >
+	  	<img src="11.png" draggable="true" ondragstart="drag(event)" id="1" width="150" height="150">
+	</div>
+	<div id="div2" ondrop="drop(event)"  ondragover="allowDrop(event)">
+  		<img src="12.png" draggable="true" ondragstart="drag(event)" id="2" width="150" height="150">
+	</div>
+	<div id="div3" ondrop="drop(event)"  ondragover="allowDrop(event)">
+	  	<img src="13.png" draggable="true" ondragstart="drag(event)" id="3" width="150" height="150">
+	</div>
+	<div id="div4" ondrop="drop(event)"  ondragover="allowDrop(event)">
+	  	<img src="14.png" draggable="true" ondragstart="drag(event)" id="4" width="150" height="150">
+	</div>
+	<div id="div5" ondrop="drop(event)"  ondragover="allowDrop(event)">
+	  	<img src="15.png" draggable="true" ondragstart="drag(event)" id="5" width="150" height="150">
+	</div>
+	<div id="div6" ondrop="drop(event)"  ondragover="allowDrop(event)">
+	  	<img src="16.png" draggable="true" ondragstart="drag(event)" id="6" width="150" height="150">
+	</div>
+	<div id="div7" ondrop="drop(event)"  ondragover="allowDrop(event)">
+	  	<img src="17.png" draggable="true" ondragstart="drag(event)" id="7" width="150" height="150">
+	</div>
+	<div id="div8" ondrop="drop(event)"  ondragover="allowDrop(event)">
+	  	<img src="18.png" draggable="true" ondragstart="drag(event)" id="8" width="150" height="150">
+	</div>
+	<div id="div9" ondrop="drop(event)" ondragover="allowDrop(event)">
+	  	<img src="19.png" draggable="true" ondragstart="drag(event)" id="9" width="150" height="150">
+	</div>
+</div>
+
+
+
+<div id="ans">
+	<div id="score">
+		Matchs: 0
+	</div>
+	<div id="ans6" ondrop="drop(event, ans6)" ondragover="allowDrop(event)"></div>
+	<div id="ans5" ondrop="drop(event, ans5)" ondragover="allowDrop(event)"></div>
+	</br>
+	<div id="ans7" ondrop="drop(event, ans7)" ondragover="allowDrop(event)"></div>
+	<div id="ans4" ondrop="drop(event, ans4)" ondragover="allowDrop(event)"></div>
+	</br>
+	<div id="ans3" ondrop="drop(event, ans3)" ondragover="allowDrop(event)"></div>
+	<div id="ans8" ondrop="drop(event, ans8)" ondragover="allowDrop(event)"></div>
+	</br>
+	<div id="ans9" ondrop="drop(event, ans9)" ondragover="allowDrop(event)"></div>
+	<div id="ans2" ondrop="drop(event, ans2)" ondragover="allowDrop(event)"></div>
+	</br>
+	<div id="ans1" ondrop="drop(event, ans1)" ondragover="allowDrop(event)"></div>
+</div>
+
+<script>
+var player = new VersalPlayerAPI();
+
+player.on('attributesChanged', function(data){
+
+});
+
+player.on('learnerStateChanged', function(data){
+
+});
+
+player.on('editableChanged', function(editable){
+
+});
+
+player.setHeight(800);
+player.startListening();
+  
+
+var score=0;
+
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text/html", ev.target.id);
+}
+
+function drop(ev, element) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text/html");
+    ev.target.appendChild(document.getElementById(data));
+    console.log('img', element.querySelector('img').draggable=false);
+    console.log('case', element.id.substring(3, 4));
+    if(element.querySelector('img').id == element.id.substring(3, 4)){
+    			score++;
+    }
+	document.getElementById("score").innerHTML = "Matchs: "+score;
+    
+
+}
+</script>
+
+</body>
+</html>

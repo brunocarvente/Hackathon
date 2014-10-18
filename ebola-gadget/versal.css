@@ -1,0 +1,50 @@
+#div1, #div2, #div3, #div4, #div5, #div6, #div7, #div8, #div9
+{float:left; width:150px; height:150px; margin:0px;padding:0px;border:0px solid #aaaaaa;}
+#ans6
+{float:left; position: absolute; width:150px; height:150px; margin-left:163px;padding:0px;border:3px dashed #aaaaaa; background-image: url('bg6.png');}
+#ans5
+{float:left; position: absolute; width:150px; height:150px; margin-left:338px;padding:0px;border:3px dashed #aaaaaa;background-image: url('bg5.png');}
+#ans7
+{float:left; position: absolute; width:150px; height:150px; margin-left:30px; margin-top:143px; padding:0px;border:3px  dashed #aaaaaa;background-image: url('bg7.png');}
+#ans4
+{float:left; position: absolute; width:150px; height:150px; margin-left:468px; margin-top:143px; padding:0px;border:3px  dashed #aaaaaa;background-image: url('bg4.png');}
+#ans3
+{float:left; position: absolute; width:150px; height:150px; margin-left:500px; margin-top:290px; padding:0px;border:3px  dashed #aaaaaa;background-image: url('bg3.png');}
+#ans8
+{float:left; position: absolute; width:150px; height:150px; margin-left:0px; margin-top:290px; padding:0px;border:3px  dashed #aaaaaa;background-image: url('bg8.png');}
+#ans9
+{float:left; position: absolute; width:150px; height:150px; margin-left:88px; margin-top:435px; padding:0px;border:3px  dashed #aaaaaa;background-image: url('bg9.png');}
+#ans2
+{float:left; position: absolute; width:150px; height:150px; margin-left:415px; margin-top:435px; padding:0px;border:3px  dashed #aaaaaa;background-image: url('bg2.png');}
+#ans1
+{float:left; position: absolute; width:150px; height:150px; margin-left:250px; margin-top:496px; padding:0px;border:3px  dashed #aaaaaa;background-image: url('bg1.png');}
+#imgs
+{
+  position: absolute;
+  width:1350px; 
+  height:150px;
+  left: 50%;
+  margin-left: -675px;
+  border:2px solid #000;
+  background-color: gray;}
+#ans
+{ width:656px; 
+  height:724px;
+  position: absolute;
+  left: 50%;
+  margin-top: 160px;
+  padding:4px;
+  margin-left: -328px;
+  border:4px double #000;
+  background-image: url('bgebola.png');}
+#score
+{ width:150px; 
+  height:30px;
+  position: absolute;
+  text-align: center;
+  font-size: 30px;
+  color: #B7322B;
+  font-weight: bold;
+  left: 50%;
+  margin-top: 180px;
+  margin-left: -78px;}
