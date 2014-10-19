@@ -50,6 +50,22 @@
   margin-left: -337px;
   border:4px double #000;
   background-image: url('bgebola.png');}
+#quiz
+{ width:660px; 
+  height:450px;
+  position: absolute;
+  left: 50%;
+  margin-top: 950px;
+  margin-left: -330px;}
+#quiz_div
+{ width:656px; 
+  height:450px;
+  position: absolute;
+  left: 50%;
+  padding:4px;
+  margin-left: -337px;
+  border:4px double #000;
+  background-image: url('bgebola.png');}
 #score
 { width:150px; 
   height:30px;
@@ -61,3 +77,6 @@
   left: 50%;
   margin-top: 180px;
   margin-left: -78px;}
+
+#div1, #div2, #div3, #div4, #div5, #div6, #div7, #div8, #div9
+{float:left; width:90px; height:90px; margin:0px;padding:0px;border:0px solid #aaaaaa;}

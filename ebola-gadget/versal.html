@@ -23,11 +23,12 @@ player.on('editableChanged', function(editable){
 
 });
 
-player.setHeight(1900);
+player.setHeight(2500);
 player.startListening();
   
 
 var score=0;
+var count=0;
 
 function allowDrop(ev) {
     ev.preventDefault();
@@ -38,6 +39,7 @@ function drag(ev) {
 }
 
 function drop(ev, element) {
+	count++;
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text/html");
     ev.target.appendChild(document.getElementById(data));
@@ -46,13 +48,29 @@ function drop(ev, element) {
     element.querySelector('img').height="150";
     element.id.ondrop="";
     element.id.ondragover="";
-    console.log('case', element.id.substring(3, 4));
+    //console.log('case', element.id.substring(3, 4));
+    //console.log('case', element.querySelector('img').id);
     if(element.querySelector('img').id == element.id.substring(3, 4)){
-    			score++;
+    	score++;
     }
 	document.getElementById("score").innerHTML = "Matchs: "+score;
-    
+    if(count > 8){
+    	if(score == 0){
+    		alert("You should study more...");
+    	}
 
+    	if(score > 0 && score < 4){
+    		alert("Yeah, you are good but not enough. You should keep studying.");
+    	}
+
+    	if(score >= 4 && score <= 7){
+    		alert("Yeah, you did very well but you can learn a little more.");
+    	}
+
+    	if(score > 7){
+    		alert("Congratulations, you are expert in the Ebola's life-cycle.");
+    	}
+    }
 }
 </script>
 
@@ -81,6 +99,7 @@ A peplomer is a glycoprotein spike on the viral envelope that will only bind to 
 <strong>9</strong>  - Newly formed Ebola viruses bud from the host cell, gaining the cell's membrane. Mature progeny are free to infect other cells.<br><br><br><br>
 
   
+<p align="center"><strong>Try to figure out how is the life-cycle of the Ebola virus.</strong></p>
 <div id="imgs">
 	<div id="imgs1">
 		<div id="div1" ondrop="drop(event)"  ondragover="allowDrop(event)" >
@@ -136,6 +155,28 @@ A peplomer is a glycoprotein spike on the viral envelope that will only bind to 
 	<div id="ans1" ondrop="drop(event, ans1)" ondragover="allowDrop(event)"></div>
 </div>
 
+
+<div id="quiz">
+	<p align="center"><strong>Try to figure out what are the symptoms of the Ebola virus.</strong></p>
+	<div id="quiz_div">
+		<div id="buttons">
+		</div>
+		<div id="buttons">
+		</div>
+		<div id="buttons">
+		</div>
+		<div id="buttons">
+		</div>
+		<div id="buttons">
+		</div>
+		<div id="buttons">
+		</div>
+		<div id="buttons">
+		</div>
+		<div id="buttons">
+		</div>
+	</div>
+</div>
 
 </body>
 </html>
