@@ -28,7 +28,10 @@ player.startListening();
   
 
 var score=0;
+var score2=0;
+var scorewrong=0;
 var count=0;
+var count2=0;
 
 function allowDrop(ev) {
     ev.preventDefault();
@@ -46,8 +49,6 @@ function drop(ev, element) {
     element.querySelector('img').draggable=false;
     element.querySelector('img').width="150";
     element.querySelector('img').height="150";
-    element.id.ondrop="";
-    element.id.ondragover="";
     //console.log('case', element.id.substring(3, 4));
     //console.log('case', element.querySelector('img').id);
     if(element.querySelector('img').id == element.id.substring(3, 4)){
@@ -72,6 +73,54 @@ function drop(ev, element) {
     	}
     }
 }
+
+
+
+function changeImage(element) {
+		count2++;
+        if (element.id=="buttons1") 
+        {
+            document.getElementById(element.id).innerHTML = "<img src='corret.png' width='90' height='90'>";
+            score2++;
+        }
+
+        if (element.id=="buttons2") 
+        {
+            document.getElementById(element.id).innerHTML = "<img src='wrong.png' width='90' height='90'>";
+			scorewrong++;
+        }
+
+        if (element.id=="buttons3") 
+        {
+            document.getElementById(element.id).innerHTML = "<img src='corret.png' width='90' height='90'>";
+            score2++;
+        }
+
+        if (element.id=="buttons4") 
+        {
+            document.getElementById(element.id).innerHTML = "<img src='corret.png' width='90' height='90'>";
+            score2++;
+        }
+
+        if (element.id=="buttons5") 
+        {
+            document.getElementById(element.id).innerHTML = "<img src='wrong.png' width='90' height='90'>";
+			scorewrong++;
+        }
+
+        if (element.id=="buttons6") 
+        {
+            document.getElementById(element.id).innerHTML = "<img src='corret.png' width='90' height='90'>";
+            score2++;
+        }
+        if(count2 >3){
+        	score2 = score2 - scorewrong;
+    		alert("Your score is: "+score2);
+        }
+}
+
+
+
 </script>
 
 <h1>Ebola Virus</h1>
@@ -159,21 +208,17 @@ A peplomer is a glycoprotein spike on the viral envelope that will only bind to 
 <div id="quiz">
 	<p align="center"><strong>Try to figure out what are the symptoms of the Ebola virus.</strong></p>
 	<div id="quiz_div">
-		<div id="buttons">
+		<div id="buttons1" onclick="changeImage(buttons1)">
 		</div>
-		<div id="buttons">
+		<div id="buttons2" onclick="changeImage(buttons2)">
 		</div>
-		<div id="buttons">
+		<div id="buttons3" onclick="changeImage(buttons3)">
 		</div>
-		<div id="buttons">
+		<div id="buttons4" onclick="changeImage(buttons4)">
 		</div>
-		<div id="buttons">
+		<div id="buttons5" onclick="changeImage(buttons5)">
 		</div>
-		<div id="buttons">
-		</div>
-		<div id="buttons">
-		</div>
-		<div id="buttons">
+		<div id="buttons6" onclick="changeImage(buttons6)">
 		</div>
 	</div>
 </div>
