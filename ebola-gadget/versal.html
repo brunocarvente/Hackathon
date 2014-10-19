@@ -3,6 +3,7 @@
 <head>
 <title>Empty gadget</title>
 <script src="bower_components/versal-component-runtime/dist/runtime.min.js"></script>
+<script src="picoModal-2.0.1.min.js"></script>
 <link rel="import" href="bower_components/versal-gadget-api/versal-gadget-api.html">
  <link rel="stylesheet" href="versal.css">
 </head>
@@ -57,19 +58,22 @@ function drop(ev, element) {
 	document.getElementById("score").innerHTML = "Matchs: "+score;
     if(count > 8){
     	if(score == 0){
-    		alert("You should study more...");
+
+
+
+    		//picoModal("You should study more...").show();
     	}
 
     	if(score > 0 && score < 4){
-    		alert("Yeah, you are good but not enough. You should keep studying.");
+    		picoModal("Yeah, you are good but not enough. You should keep studying.").show();
     	}
 
     	if(score >= 4 && score <= 7){
-    		alert("Yeah, you did very well but you can learn a little more.");
+    		picoModal("Yeah, you did very well but you can learn a little more.").show();
     	}
 
     	if(score > 7){
-    		alert("Congratulations, you are expert in the Ebola's life-cycle.");
+    		picoModal("Congratulations, you are expert in the Ebola's life-cycle.").show();
     	}
     }
 }
@@ -113,7 +117,7 @@ function changeImage(element) {
             document.getElementById(element.id).innerHTML = "<img src='corret.png' width='90' height='90'>";
             score2++;
         }
-        if(count2 >3){
+        if(count2 ==4){
         	score2 = score2 - scorewrong;
     		alert("Your score is: "+score2);
         }
