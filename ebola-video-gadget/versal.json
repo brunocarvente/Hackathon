@@ -1,0 +1,10 @@
+{
+  "launcher": "iframe",
+  "name": "ebola-video-gadget",
+  "version": "0.0.2",
+  "title": "Ebola Virus - Videos Gadget",
+  "description": "Does nothing just yet",
+  "author": "anonymous",
+  "defaultConfig": {},
+  "defaultUserState": {}
+}

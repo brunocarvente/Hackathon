@@ -1,0 +1,10 @@
+{
+  "launcher": "iframe",
+  "name": "ebola-gadget",
+  "version": "0.0.2",
+  "title": "Ebola Virus - Quiz Gadget",
+  "description": "Does nothing just yet",
+  "author": "anonymous",
+  "defaultConfig": {},
+  "defaultUserState": {}
+}

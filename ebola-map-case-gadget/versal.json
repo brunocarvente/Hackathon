@@ -1,8 +1,8 @@
 {
   "launcher": "iframe",
-  "name": "ebola-gadget",
+  "name": "ebola-map-case-gadget",
   "version": "0.0.1",
-  "title": "My gadget",
+  "title": "Ebola Virus - Cases Map Gadget",
   "description": "Does nothing just yet",
   "author": "anonymous",
   "defaultConfig": {},
