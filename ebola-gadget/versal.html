@@ -3,7 +3,9 @@
 <head>
 <title>Empty gadget</title>
 <script src="bower_components/versal-component-runtime/dist/runtime.min.js"></script>
+
 <script src="picoModal-2.0.1.min.js"></script>
+
 <link rel="import" href="bower_components/versal-gadget-api/versal-gadget-api.html">
  <link rel="stylesheet" href="versal.css">
 </head>
@@ -42,6 +44,19 @@ function drag(ev) {
     ev.dataTransfer.setData("text/html", ev.target.id);
 }
 
+function rePositionModal(ev) {
+	window.aprox_scroll_y = ev.pageY - ev.screenY;
+	popup_top = (screen.height / 2) + window.aprox_scroll_y;
+	if (popup_top < 251) {
+		popup_top = 251;
+	} 
+	// Have some minimum value
+	var modals = document.querySelectorAll(".pico-content");
+	[].forEach.call(modals, function(modal){
+		modal.style.top = popup_top + 'px';
+	});
+}
+
 function drop(ev, element) {
 	count++;
     ev.preventDefault();
@@ -56,12 +71,9 @@ function drop(ev, element) {
     	score++;
     }
 	document.getElementById("score").innerHTML = "Matchs: "+score;
-    if(count > 8){
+    if(count > 1){
     	if(score == 0){
-
-
-
-    		//picoModal("You should study more...").show();
+    		picoModal("You should study more...").show();
     	}
 
     	if(score > 0 && score < 4){
@@ -75,6 +87,8 @@ function drop(ev, element) {
     	if(score > 7){
     		picoModal("Congratulations, you are expert in the Ebola's life-cycle.").show();
     	}
+
+    	rePositionModal(ev);
     }
 }
 
@@ -119,7 +133,9 @@ function changeImage(element) {
         }
         if(count2 ==4){
         	score2 = score2 - scorewrong;
-    		alert("Your score is: "+score2);
+
+    		picoModal("Your score is: "+score2).show();	
+    		rePositionModal(event);
         }
 }
 
@@ -127,7 +143,7 @@ function changeImage(element) {
 
 </script>
 
-<h1>Ebola Virus</h1>
+<h1>Ebola Virus Quiz Gadget</h1>
 <br>
 <strong>Causes severe disease in humans in the form of a violent and viral hemorrhagic fever.</strong>
 <br><br>
