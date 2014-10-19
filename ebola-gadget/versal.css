@@ -1,5 +1,5 @@
 #div1, #div2, #div3, #div4, #div5, #div6, #div7, #div8, #div9
-{float:left; width:150px; height:150px; margin:0px;padding:0px;border:0px solid #aaaaaa;}
+{float:left; width:90px; height:90px; margin:0px;padding:0px;border:0px solid #aaaaaa;}
 #ans6
 {float:left; position: absolute; width:150px; height:150px; margin-left:163px;padding:0px;border:3px dashed #aaaaaa; background-image: url('bg6.png');}
 #ans5
@@ -21,20 +21,33 @@
 #imgs
 {
   position: absolute;
-  width:1350px; 
-  height:150px;
+  width:700px; 
+  text-align: center;
+  height:180px;
   left: 50%;
-  margin-left: -675px;
-  border:2px solid #000;
-  background-color: gray;}
+  margin-left: -350px;
+  background-image: url('VirusBg.png');}
+#imgs1
+{
+  position: absolute;
+  width:450px; 
+  left: 50%;
+  margin-left: -225px;}
+#imgs2
+{
+  position: absolute;
+  width:360px; 
+  left: 50%;
+  margin-left: -180px;
+  margin-top: 90px;}
 #ans
 { width:656px; 
   height:724px;
   position: absolute;
   left: 50%;
-  margin-top: 160px;
+  margin-top: 190px;
   padding:4px;
-  margin-left: -328px;
+  margin-left: -337px;
   border:4px double #000;
   background-image: url('bgebola.png');}
 #score

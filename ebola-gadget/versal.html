@@ -8,58 +8,6 @@
 </head>
 
 <body>
-  
-<div id="imgs">
-	<div id="div1" ondrop="drop(event)"  ondragover="allowDrop(event)" >
-	  	<img src="11.png" draggable="true" ondragstart="drag(event)" id="1" width="150" height="150">
-	</div>
-	<div id="div2" ondrop="drop(event)"  ondragover="allowDrop(event)">
-  		<img src="12.png" draggable="true" ondragstart="drag(event)" id="2" width="150" height="150">
-	</div>
-	<div id="div3" ondrop="drop(event)"  ondragover="allowDrop(event)">
-	  	<img src="13.png" draggable="true" ondragstart="drag(event)" id="3" width="150" height="150">
-	</div>
-	<div id="div4" ondrop="drop(event)"  ondragover="allowDrop(event)">
-	  	<img src="14.png" draggable="true" ondragstart="drag(event)" id="4" width="150" height="150">
-	</div>
-	<div id="div5" ondrop="drop(event)"  ondragover="allowDrop(event)">
-	  	<img src="15.png" draggable="true" ondragstart="drag(event)" id="5" width="150" height="150">
-	</div>
-	<div id="div6" ondrop="drop(event)"  ondragover="allowDrop(event)">
-	  	<img src="16.png" draggable="true" ondragstart="drag(event)" id="6" width="150" height="150">
-	</div>
-	<div id="div7" ondrop="drop(event)"  ondragover="allowDrop(event)">
-	  	<img src="17.png" draggable="true" ondragstart="drag(event)" id="7" width="150" height="150">
-	</div>
-	<div id="div8" ondrop="drop(event)"  ondragover="allowDrop(event)">
-	  	<img src="18.png" draggable="true" ondragstart="drag(event)" id="8" width="150" height="150">
-	</div>
-	<div id="div9" ondrop="drop(event)" ondragover="allowDrop(event)">
-	  	<img src="19.png" draggable="true" ondragstart="drag(event)" id="9" width="150" height="150">
-	</div>
-</div>
-
-
-
-<div id="ans">
-	<div id="score">
-		Score: 0
-	</div>
-	<div id="ans6" ondrop="drop(event, ans6)" ondragover="allowDrop(event)"></div>
-	<div id="ans5" ondrop="drop(event, ans5)" ondragover="allowDrop(event)"></div>
-	</br>
-	<div id="ans7" ondrop="drop(event, ans7)" ondragover="allowDrop(event)"></div>
-	<div id="ans4" ondrop="drop(event, ans4)" ondragover="allowDrop(event)"></div>
-	</br>
-	<div id="ans3" ondrop="drop(event, ans3)" ondragover="allowDrop(event)"></div>
-	<div id="ans8" ondrop="drop(event, ans8)" ondragover="allowDrop(event)"></div>
-	</br>
-	<div id="ans9" ondrop="drop(event, ans9)" ondragover="allowDrop(event)"></div>
-	<div id="ans2" ondrop="drop(event, ans2)" ondragover="allowDrop(event)"></div>
-	</br>
-	<div id="ans1" ondrop="drop(event, ans1)" ondragover="allowDrop(event)"></div>
-</div>
-
 <script>
 var player = new VersalPlayerAPI();
 
@@ -75,7 +23,7 @@ player.on('editableChanged', function(editable){
 
 });
 
-player.setHeight(800);
+player.setHeight(1900);
 player.startListening();
   
 
@@ -93,7 +41,11 @@ function drop(ev, element) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text/html");
     ev.target.appendChild(document.getElementById(data));
-    console.log('img', element.querySelector('img').draggable=false);
+    element.querySelector('img').draggable=false;
+    element.querySelector('img').width="150";
+    element.querySelector('img').height="150";
+    element.id.ondrop="";
+    element.id.ondragover="";
     console.log('case', element.id.substring(3, 4));
     if(element.querySelector('img').id == element.id.substring(3, 4)){
     			score++;
@@ -103,6 +55,87 @@ function drop(ev, element) {
 
 }
 </script>
+
+<h1>Ebola Virus</h1>
+<br>
+<strong>Causes severe disease in humans in the form of a violent and viral hemorrhagic fever.</strong>
+<br><br>
+
+<strong>1</strong> - Ebolavirus attaches to receptors of the host cell using a glycoprotein called a peplomer.
+A peplomer is a glycoprotein spike on the viral envelope that will only bind to specific receptors on a host cell. The virus is then engulfed by endocytosis.<br>
+<br>
+<strong>2</strong>  - Ebola virion envelope and cellular membrane of host fuses together and the virus nucleocapsid is released.<br>
+<br>
+<strong>3</strong>  - Virus uncoats and the nucleocapsid is transcribed onto positive stranded mRNA which are translated into viral proteins.<br>
+<br>
+<strong>4</strong>  - Glycosylation occurs in which viral proteins attach to glycans and the glycoprotein precursors are cleaved into grlycoprotein 1 and 2.<br>
+<br>
+<strong>5</strong>  - Glycoproteins 1 and 2 assemble to form heterodimers. in the meantime, a negative stranded RNA strand is synthesized to be used as a template to create positive single stranded RNA.<br>
+<br>
+<strong>6</strong>  - Heterodimers multiply to form trimers that will form the surface peplomers of the emerging Ebola cells.<br>
+<br>
+<strong>7</strong>  - New viral RNA copies are made from the negative stranded RNA strand and the trimers make their way to the cell membrane.<br>
+<br>
+<strong>8</strong> - Formation of nucleocapsids and viral envelope occur when the trimers (viral proteins) and new genomes gather around the edges of the host cell in preparation for b udding.<br>
+<br>
+<strong>9</strong>  - Newly formed Ebola viruses bud from the host cell, gaining the cell's membrane. Mature progeny are free to infect other cells.<br><br><br><br>
+
+  
+<div id="imgs">
+	<div id="imgs1">
+		<div id="div1" ondrop="drop(event)"  ondragover="allowDrop(event)" >
+		  	<img src="11.png" draggable="true" ondragstart="drag(event)" id="1" width="90" height="90">
+		</div>
+		<div id="div2" ondrop="drop(event)"  ondragover="allowDrop(event)">
+	  		<img src="12.png" draggable="true" ondragstart="drag(event)" id="2" width="90" height="90">
+		</div>
+		<div id="div3" ondrop="drop(event)"  ondragover="allowDrop(event)">
+		  	<img src="13.png" draggable="true" ondragstart="drag(event)" id="3" width="90" height="90">
+		</div>
+		<div id="div4" ondrop="drop(event)"  ondragover="allowDrop(event)">
+		  	<img src="14.png" draggable="true" ondragstart="drag(event)" id="4" width="90" height="90">
+		</div>
+		<div id="div5" ondrop="drop(event)"  ondragover="allowDrop(event)">
+		  	<img src="15.png" draggable="true" ondragstart="drag(event)" id="5" width="90" height="90">
+		</div>
+	</div>
+	<div id="imgs2">
+		<div id="div6" ondrop="drop(event)"  ondragover="allowDrop(event)">
+		  	<img src="16.png" draggable="true" ondragstart="drag(event)" id="6" width="90" height="90">
+		</div>
+		<div id="div7" ondrop="drop(event)"  ondragover="allowDrop(event)">
+		  	<img src="17.png" draggable="true" ondragstart="drag(event)" id="7" width="90" height="90">
+		</div>
+		<div id="div8" ondrop="drop(event)"  ondragover="allowDrop(event)">
+		  	<img src="18.png" draggable="true" ondragstart="drag(event)" id="8" width="90" height="90">
+		</div>
+		<div id="div9" ondrop="drop(event)" ondragover="allowDrop(event)">
+		  	<img src="19.png" draggable="true" ondragstart="drag(event)" id="9" width="90" height="90">
+		</div>
+	</div>
+</div>
+
+
+
+<div id="ans">
+	<div id="score">
+		Matchs: 0
+	</div>
+	<div id="ans6" ondrop="drop(event, ans6)" ondragover="allowDrop(event)"></div>
+	<div id="ans5" ondrop="drop(event, ans5)" ondragover="allowDrop(event)"></div>
+	</br>
+	<div id="ans7" ondrop="drop(event, ans7)" ondragover="allowDrop(event)"></div>
+	<div id="ans4" ondrop="drop(event, ans4)" ondragover="allowDrop(event)"></div>
+	</br>
+	<div id="ans3" ondrop="drop(event, ans3)" ondragover="allowDrop(event)"></div>
+	<div id="ans8" ondrop="drop(event, ans8)" ondragover="allowDrop(event)"></div>
+	</br>
+	<div id="ans9" ondrop="drop(event, ans9)" ondragover="allowDrop(event)"></div>
+	<div id="ans2" ondrop="drop(event, ans2)" ondragover="allowDrop(event)"></div>
+	</br>
+	<div id="ans1" ondrop="drop(event, ans1)" ondragover="allowDrop(event)"></div>
+</div>
+
 
 </body>
 </html>
