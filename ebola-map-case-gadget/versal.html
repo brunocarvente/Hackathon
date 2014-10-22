@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Ebola Virus - Cases Map Gadget</title>
-    
+
 <script src="bower_components/versal-component-runtime/dist/runtime.min.js"></script>
 
 <link rel="import" href="bower_components/versal-gadget-api/versal-gadget-api.html">
@@ -29,7 +29,7 @@ player.startListening();
 </script>
     <style>
       body{
-        text-align: center; 
+        text-align: center;
       }
       #map-canvas {
         height: 500px;
@@ -38,7 +38,7 @@ player.startListening();
         padding: 0px;
         border: 2px solid;
         position:absolute;
-        text-align: left; 
+        text-align: left;
         left:50%;
         margin-left:-350px;
       }
@@ -96,80 +96,56 @@ function addMarker(location) {
   console.log(location);
 }
 
+function getMarker(lat, lng){
+  return new google.maps.Marker({
+    position: new google.maps.LatLng(lat, lng),
+    icon: "ebola.png",
+    map: map
+  });
+};
+
 function firstCases() {
-    var marker;
-    marker = new google.maps.Marker({
-      position: new google.maps.LatLng(20.96143961409685, 27.94921875),
-      icon: "ebola.png",
-      map: map
+    var locations = [
+      {
+        note: 'Guinea',
+        lat: 9.183333,
+        lng: -10.100000
+      },
+      {
+        note: 'Liberia (Monrovia)',
+        lat: 6.300774,
+        lng: -10.797160
+      },
+      {
+        note: 'Sierra Leone (Falaba)',
+        lat: 9.855216,
+        lng: -11.322184
+      },
+      {
+        note: 'Nigeria (Lagos)',
+        lat: 6.465422,
+        lng: 3.406448
+      },
+      {
+        note: 'Spain (Madrid)',
+        lat: 40.415363,
+        lng: -3.707398
+      },
+      {
+        note: 'US (Dallas)',
+        lat: 32.897480,
+        lng: -97.040443
+      },
+      {
+        note: 'Senegal (Dakar)',
+        lat: 14.6708333,
+        lng: -17.4380556
+      }
+    ];
+
+    locations.forEach(function(location){
+      markers.push(getMarker(location.lat, location.lng));
     });
-    markers.push(marker);
-    marker = new google.maps.Marker({
-      position: new google.maps.LatLng(36.03133177633187, -96.15234375),
-      icon: "ebola.png",
-      map: map
-    });
-    markers.push(marker);
-    marker = new google.maps.Marker({
-      position: new google.maps.LatLng(9.449061826881419, 10.37109375),
-      icon: "ebola.png",
-      map: map
-    });
-    markers.push(marker);
-    marker = new google.maps.Marker({
-      position: new google.maps.LatLng(25.16517336866393, 43.41796875 ),
-      icon: "ebola.png",
-      map: map
-    });
-    markers.push(marker);
-    marker = new google.maps.Marker({
-      position: new google.maps.LatLng( 20.3034175184893,   47.63671875),
-      icon: "ebola.png",
-      map: map
-    });
-    markers.push(marker);
-    marker = new google.maps.Marker({
-      position: new google.maps.LatLng(8.059229627200192,   -2.63671875),
-      icon: "ebola.png",
-      map: map
-    });
-    markers.push(marker);
-    marker = new google.maps.Marker({
-      position: new google.maps.LatLng(24.5271348225978,   8.26171875),
-      icon: "ebola.png",
-      map: map
-    });
-    markers.push(marker);
-    marker = new google.maps.Marker({
-      position: new google.maps.LatLng(-9.79567758282973,   -44.12109375),
-      icon: "ebola.png",
-      map: map
-    });
-    markers.push(marker);
-    marker = new google.maps.Marker({
-      position: new google.maps.LatLng(44.33956524809713,   -120.41015625),
-      icon: "ebola.png",
-      map: map
-    });
-    markers.push(marker);
-    marker = new google.maps.Marker({
-      position: new google.maps.LatLng(40.713955826286046,   58.53515625),
-      icon: "ebola.png",
-      map: map
-    });
-    markers.push(marker);
-    marker = new google.maps.Marker({
-      position: new google.maps.LatLng(4.565473550710278,   37.44140625),
-      icon: "ebola.png",
-      map: map
-    });
-    markers.push(marker);
-    marker = new google.maps.Marker({
-      position: new google.maps.LatLng(24.5271348225978,   2.98828125),
-      icon: "ebola.png",
-      map: map
-    });
-    markers.push(marker);
 }
 
 // Sets the map on all markers in the array.
